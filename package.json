@@ -1,0 +1,31 @@
+{
+    "name": "interlis2highlighter",
+    "displayName": "INTERLIS2 File Highlighter",
+    "description": "A VSC extension to support INTERLIS 2",
+    "icon": "images/iliIcon.PNG",
+    "publisher": "geow",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/olivergrimm/vsc_interlis2_extension.git"
+    },
+    "version": "0.9.0",
+    "engines": {
+        "vscode": "^1.35.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "INTERLIS2",
+            "aliases": ["INTERLIS2", "ili"],
+            "extensions": [".ili"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "INTERLIS2",
+            "scopeName": "source.ili",
+            "path": "./syntaxes/ili.tmLanguage.json"
+        }]
+    }
+}

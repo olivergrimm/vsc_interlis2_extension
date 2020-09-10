@@ -1,0 +1,112 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "ili",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#markups"
+		}
+	],
+		"repository": {
+			"keywords": {
+				"patterns": [
+					{
+					"name": "keyword.model.ili",
+					"match": "(\\b(MODEL))|(\\b(END))"
+					},
+					{
+					"name": "keyword.topic.ili",
+					"match": "(\\b(TOPIC))|(\\b(END))"
+					},
+					{
+					"name": "keyword.class.ili",
+					"match": "(\\b(CLASS))|(\\b(END))"
+					},					
+					{
+					"name": "keyword.association.ili",
+					"match": "(\\b(ASSOCIATION))|(\\b(END))"
+					},					
+					{
+					"name": "keyword.structure.ili",
+					"match": "(\\b(STRUCTURE))|(\\b(END))"
+					}					
+				]
+				},
+		"comments": {
+					"patterns": [
+						{
+						"name": "comment.line.double-dash.ili",
+						"begin": "!!",
+						"end": "\n"
+		
+						}
+					]
+				},
+		"strings":{
+			"patterns": [
+				{
+				"name":"string.quoted.single.ili",
+				"begin": "{",
+				"end": "}"
+				},
+				{
+					"name":"string.paranth.single.ili",
+					"begin": "\\(",
+					"end": "\\)"
+				}
+				
+			]
+		},
+		"markups": {
+			"patterns": [
+				{
+				"name": "constant.character.ili",
+				"match": "(;|=|:)"
+				},
+				{
+					"name": "constant.association.ili",
+					"match": "(--<#>)"
+				},
+				{
+					"name": "constant.composition.ili",
+					"match": "--<>"
+				},
+				{
+					"name": "constant.aggregation.ili",
+					"match": "--"
+				},
+				{
+				"name": "constant.language.ili",
+				"match": "(INTERLIS 2.4|VERSION|MANDATORY|(LOCAL)|LIST|BAG|EXISTENCE|ATTRIBUTE|IMPORTS|CONSTRAINT|OF|REQUIRED|EXTENDS|(EXTENDED)|\\(EXTERNAL\\)|(ABSTRACT)|UNIQUE|AT|TEXT|INT|REFERENCE|TO|IN)"
+				},
+				{
+				"name": "constant.numeric",
+				"match": "[0-9]"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+				"name": "variable.boolean.ili",
+				"match": "(BOOLEAN|INT)"
+				}
+			]
+		}
+	},
+	"scopeName": "source.ili"
+}
