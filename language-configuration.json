@@ -2,9 +2,22 @@
   "comments": {
     "lineComment": "!!"
   },
-  "brackets": [["{", "}"], ["[", "]"], ["(", ")"]],
+  "brackets": [
+    ["TOPIC", "END ;"], 
+    ["MODEL", "END ;"], 
+    ["CLASS", "END ;"], 
+    ["ASSOCIATION", "END ;"], 
+    ["STRUCTURE", "END ;"], 
+    ["VIEW", "END ;"],
+    ["CLASS", ";"]
+  ],
   "autoClosingPairs": [
     { "open": "TOPIC", "close": "END" },
+    { "open": "MODEL", "close": "END" },
+    { "open": "CLASS", "close": "END" },
+    { "open": "ASSOCIATION", "close": "END" },
+    { "open": "STRUCTURE", "close": "END" },
+    { "open": "{", "close": "}" },
     { "open": "[", "close": "]" },
     { "open": "(", "close": ")" },
     { "open": "'", "close": "'", "notIn": ["string", "comment"] },
@@ -14,12 +27,15 @@
   ],
   "autoCloseBefore": ";:.,=}])>` \n\t",
   "surroundingPairs": [
-    ["TOPIC", "END"],
     ["CLASS", "END"],
+    ["TOPIC", "END"],
     ["MODEL", "END"],
+    ["ASSOCIATION", "END"],
+    ["STRUCTURE", "END"],
+    ["VIEW", "END"],
     ["'", "'"],
     ["\"", "\""],
-    ["`", "`"]
+    ["{", "}"]
   ],
   "folding": {
     "markers": {

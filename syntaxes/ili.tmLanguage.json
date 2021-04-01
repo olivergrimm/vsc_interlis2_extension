@@ -43,7 +43,19 @@
 					{
 					"name": "keyword.structure.ili",
 					"match": "(\\b(STRUCTURE))|(\\b(END))"
-					}					
+					},					
+					{
+					"name": "keyword.constraint.ili",
+					"match": "(\\b(CONSTRAINT))|(\\b(END))"
+					},
+					{
+						"name": "keyword.view.ili",
+						"match": "(\\b(VIEW))|(\\b(END))"
+						},				
+					{
+					"name": "keyword.language.ili",
+					"match": "(\\b(INTERLIS 2.4;))"
+					}						
 				]
 				},
 		"comments": {
@@ -68,7 +80,6 @@
 					"begin": "\\(",
 					"end": "\\)"
 				}
-				
 			]
 		},
 		"markups": {
@@ -79,19 +90,19 @@
 				},
 				{
 					"name": "constant.association.ili",
-					"match": "(--<#>)"
+					"match": "(\\?<![\\w\\d])--<#>(?![\\w\\d])"
 				},
 				{
 					"name": "constant.composition.ili",
-					"match": "--<>"
+					"match": "(\\?<![\\w\\d])--<>(?![\\w\\d])"
 				},
 				{
 					"name": "constant.aggregation.ili",
-					"match": "--"
+					"match": "(--)"
 				},
 				{
 				"name": "constant.language.ili",
-				"match": "(INTERLIS 2.4|VERSION|MANDATORY|(LOCAL)|LIST|BAG|EXISTENCE|ATTRIBUTE|IMPORTS|CONSTRAINT|OF|REQUIRED|EXTENDS|(EXTENDED)|\\(EXTERNAL\\)|(ABSTRACT)|UNIQUE|AT|TEXT|INT|REFERENCE|TO|IN)"
+				"match": "(INTERLIS|VERSION|UNQUALIFIED|MANDATORY|(LOCAL)|LIST|DIRECTED|BAG|ORDERED|EXISTENCE|ATTRIBUTE|AGGREGATES|IMPORTS|POLYLINE|MULTIPOLYLINE|WITHOUT|WITH|SET|UNION|AGGREGATION|REFSYSTEM|EQUAL|DEFINED|CONSTRAINT|CIRCULAR|FINAL|DOMAIN|OF|REQUIRED|WHERE|EXTENDS|JOIN|AND|(EXTENDED)|\\(EXTERNAL\\)|(ABSTRACT)|UNIQUE|AT|TEXT|INT|REFERENCE|TO|IN|FINAL|BASKET|OBJECTS|ROTATION|SURFACE|VERTEX|AREA|AS|CONTEXT|DEPENDS|ON)"
 				},
 				{
 				"name": "constant.numeric",
@@ -103,7 +114,19 @@
 			"patterns": [
 				{
 				"name": "variable.boolean.ili",
-				"match": "(BOOLEAN|INT)"
+				"match": "(BOOLEAN)"
+				},
+				{
+				"name": "variable.text.ili",
+				"match": "(TEXT)"
+				},
+				{
+				"name": "variable.geom.ili",
+				"match": "(OVERLAPS)"
+				},
+				{
+				"name": "variable.int.ili",
+				"match": "(\\?<![\\w\\d])INT(?![\\w\\d])"
 				}
 			]
 		}

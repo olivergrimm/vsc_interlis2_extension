@@ -12,150 +12,32 @@ A Visual Studio Code extension for adding color highlighting to INTERLIS 2.4 fil
 ### Syntax Highlighting
 The extension associates with `.ILI` files and applies coloring to the different elements in the file, for example:
 
-* Dates and times in ISO format, such as
-    * `2015-12-09`
-    * `2015-12-09 09:29`
-    * `2015-12-09 09:29:02.258`
-* Dates and times in some culture specific formats
-    * `12/09/2016`
-    * `12.09.2016`
-    * `12-09-2016`
-    * `12-09-2015 09:29`
-    * `12-09-2015 09:29:02,258`
-* Log level, such as
-    * `DEBUG`
-    * `INFO`, `INFORMATION`
-    * `WARN`, `WARNING`
-    * `ERROR`, `FAIL`, `FAILURE`
-* Numeric constants, such as
-    * `1`
-    * `234`
-* Standard .Net constants
-    * `null`
-    * `true`
-    * `false`
-* String constants, enclosed in single or double quotes. Examples:
-    * `"lorem ipsum"`
-    * `'lorem ipsum'`
-* GUIDs. Example:
-    * `859A4209-A82D-4CA1-8468-C2606A3501EE`
-* MAC addresses (hex numbers separated by colons or dashes (':', '-')
-    * `43:A4:19:A5:AF:C0`
-    * `43-A4-19-A5-AF-C0`
-    * `fde8:e767:269c:0:9425:3477:7c8f:7f1a`
-    * `fde8-e767-269c-0-9425-3477-7c8f-7f1a`
+* Object names like
+    * `TOPIC`
+    * `MODEL`
+    * `CLASS`
+* Data types like
+    * `BOOLEAN`
+    * `INT`
+    * `TEXT`
+* Keywords like
+    * `ASSOCIATION`
+    * `ABSTRACT`
+    * `EXTENDS`
+* String patterns like
+    * `{...}`
 
-* .Net exception type names, i.e. word ending with `Exception`, such as
-    * `ArgumentNullException`
-    * `HttpException`
-* .Net exception stack traces, i.e. lines starting with whitespace characters, followed by `at`, for example:
-    ```
-    System.NullReferenceException: Object reference not set to an instance of an object.
-        at MyClass.DoSomethingElse(string foo)
-        at MyClass.DoSomething()
-    ```
-* Urls:
-    * `http://www.meadow.se/wordpress/`
-
-* Namespaces (sequences of alphanumeric and dot characters). Useful to identity namespace qualified type names, for example.
-    * `MyApp.MyNameSpace.MyClass`
-
-### Visualization of Time Duration
-If you select multiple lines of a `.log` file,
-a status bar item is displayed that indicates how many days, hours, minutes, seconds and milliseconds you have selected.
-![Time Duration Sample](https://github.com/emilast/vscode-logfile-highlighter/raw/master/content/Selection-Sample.gif)  
-
-## Customization
-
-### Customizing the colors
-
-By default, this extension reuses existing theme colors in order to adapt to the user's preferences. Sometimes this will result in colors that may not make complete sense in the log file context (for example `ERROR` might be green and `DEBUG` red, when it would be more appropriate to have it the other way around).
-
-For this reason, the extension defines a special set of grammar tokens that can be used to override the colors of the default log items:
-
-```
-log.constant
-log.date
-log.verbose
-log.debug
-log.error
-log.exception
-log.info
-log.string
-log.exceptiontype
-log.warning
-```
-
-To override the color for one of these, use the `editor.tokenColorCustomizations` user setting, which was introduced in Visual Studio Code 1.15. Here's an example that forces errors to be red and bold and warnings to be orange, regardless of what color theme is used:
-
-```JSON
-"editor.tokenColorCustomizations": {
-    "textMateRules": [
-        {
-            "scope": "log.error",
-            "settings": {
-                "foreground": "#af1f1f",
-                "fontStyle": "bold"
-            }
-        },
-        {
-            "scope": "log.warning",
-            "settings": {
-                "foreground": "#f4ad42",
-                "fontStyle": ""
-            }
-        }
-    ]
-}
-```
-
-### Defining custom highlighting patterns
-
-The extension also supports defining custom patterns to be highlighted. This can be useful to make the extension compatible with the log levels of an otherwise unsupported logging framework or to highlight domain specific patterns, or just about anything else.
-
-The patterns are defined in the user settings like in this example:
-
-
-```JSON
-"logFileHighlighter.customPatterns": [
-    {
-        "pattern": "Verbose",
-        "foreground": "#22aa22"
-    },
-    {
-        "pattern": "E/\\w+",
-        "foreground": "#af1f1f",
-        "background": "#344323"
-    },
-    {
-        "pattern": "\\[.*\\]",
-        "background": "#333333"
-    }
-]
-```
-
-* `pattern` - The matching expression. This can be either a string constant or a JavaScript regular expression (remember to **escape special characters**).
-
-* `foreground` - [Optional] The color to use as foreground color for the matched pattern. Hex colors are preferred since they can be selected with the VS Code color picker but predefined VS Code color names work as well.
-
-* `background` - [Optional] The color to use as background color for the matched pattern.
-
-**Note**: Both `foreground` and `background` are optional individually but *at least* one of them must be set for the custom pattern to be activated.
-
-**Tip**: By only setting the `background` a custom pattern can be combined with the built-in patterns that control the foreground color. This is shown in the last pattern in the example above.
-
-![Custom Pattern Sample](https://github.com/emilast/vscode-logfile-highlighter/raw/master/content/CustomPattern-Sample.gif)  
 
 ### File associations
 
-To make VS Code treat other file extensions than the default `.log` as log files, add the following to the user settings:
+To make VS Code treat other file extensions than the default `.ili` as INTERLIS2 files, add the following to the user settings:
 
 ```JSON
 "files.associations": {
-    "*.log.*": "log"
+    "*.ili*": "INTERLIS2"
 },
 ```
-The example above associates extensions such as `.log.1` and `.log.2` with the Log File highlighter extension.
+The example above associates extensions such as `.ili` with the INTERLIS2 File highlighter extension.
 
 
-[sample]: https://raw.githubusercontent.com/emilast/vscode-logfile-highlighter/master/content/sample.png
+[sample]: https://github.com/olivergrimm/vsc_interlis2_extension/blob/master/images/snipped.PNG?raw=true
