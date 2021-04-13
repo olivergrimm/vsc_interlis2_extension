@@ -21,62 +21,61 @@
 			"include": "#markups"
 		}
 	],
-		"repository": {
-			"keywords": {
-				"patterns": [
-					{
-					"name": "keyword.model.ili",
-					"match": "(\\b(MODEL))|(\\b(END))"
-					},
-					{
-					"name": "keyword.topic.ili",
-					"match": "(\\b(TOPIC))|(\\b(END))"
-					},
-					{
-					"name": "keyword.class.ili",
-					"match": "(\\b(CLASS))|(\\b(END))"
-					},					
-					{
-					"name": "keyword.association.ili",
-					"match": "(\\b(ASSOCIATION))|(\\b(END))"
-					},					
-					{
-					"name": "keyword.structure.ili",
-					"match": "(\\b(STRUCTURE))|(\\b(END))"
-					},					
-					{
-					"name": "keyword.constraint.ili",
-					"match": "(\\b(CONSTRAINT))|(\\b(END))"
-					},
-					{
-						"name": "keyword.view.ili",
-						"match": "(\\b(VIEW))|(\\b(END))"
-						},				
-					{
-					"name": "keyword.language.ili",
-					"match": "(\\b(INTERLIS 2.4;))"
-					}						
-				]
-				},
-		"comments": {
-					"patterns": [
-						{
-						"name": "comment.line.double-dash.ili",
-						"begin": "!!",
-						"end": "\n"
-		
-						}
-					]
-				},
-		"strings":{
+	"repository": {
+		"keywords": {
 			"patterns": [
 				{
-				"name":"string.quoted.single.ili",
-				"begin": "{",
-				"end": "}"
+					"name": "keyword.model.ili",
+					"match": "(\\b(MODEL))|(\\b(END))"
 				},
 				{
-					"name":"string.paranth.single.ili",
+					"name": "keyword.topic.ili",
+					"match": "(\\b(TOPIC))|(\\b(END))"
+				},
+				{
+					"name": "keyword.class.ili",
+					"match": "(\\b(CLASS))|(\\b(END))"
+				},
+				{
+					"name": "keyword.association.ili",
+					"match": "(\\b(ASSOCIATION))|(\\b(END))"
+				},
+				{
+					"name": "keyword.structure.ili",
+					"match": "(\\b(STRUCTURE))|(\\b(END))"
+				},
+				{
+					"name": "keyword.constraint.ili",
+					"match": "(\\b(CONSTRAINT))|(\\b(END))"
+				},
+				{
+					"name": "keyword.view.ili",
+					"match": "(\\b(VIEW))|(\\b(END))"
+				},
+				{
+					"name": "keyword.language.ili",
+					"match": "(\\b(INTERLIS 2.4;))"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-dash.ili",
+					"begin": "!!",
+					"end": "\n"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.single.ili",
+					"begin": "{",
+					"end": "}"
+				},
+				{
+					"name": "string.paranth.single.ili",
 					"begin": "\\(",
 					"end": "\\)"
 				}
@@ -85,8 +84,8 @@
 		"markups": {
 			"patterns": [
 				{
-				"name": "constant.character.ili",
-				"match": "(;|=|:)"
+					"name": "constant.character.ili",
+					"match": "(;|=|:)"
 				},
 				{
 					"name": "constant.association.ili",
@@ -101,32 +100,32 @@
 					"match": "(--)"
 				},
 				{
-				"name": "constant.language.ili",
-				"match": "(ABSTRACT|ACCORDING|AGGREGATES|AGGREGATION|ALL|AND|ANY|ANYCLASS|ANYSTRUCTURE|ARCS|AREA|AS|ASSOCIATION|AT|ATTRIBUTE|ATTRIBUTES|BAG|BASE|BASED|BASKET|BINARY|BLACKBOX|BLANK|BOOLEAN|BY|CARDINALITY|CHARSET|CIRCULAR|CLASS|CLOCKWISE|CODE|CONSTRAINT|CONSTRAINTS|CONTEXT|CONTINUE|CONTINUOUS|CONTOUR|CONTRACTED|COORD|COORD2|COORD3|COUNTERCLOCKWISE|DATE|DATETIME|DEFAULT|DEFERRED|DEFINED|DEGREES|DEPENDS|DERIVATIVES|DERIVED|DIM1|DIM2|DIRECTED|DOMAIN|END|ENUMTREEVAL|ENUMVAL|EQUAL|EXISTENCE|EXTENDED|EXTENDS|EXTERNAL|FINAL|FIRST|FIX|FONT|FORM|FORMAT|FREE|FROM|FUNCTION|GENERIC|GENERICS|GRADS|GRAPHIC|HALIGNMENT|HIDING|I16|I32|IDENT|IMPORTS|IN|INHERITANCE|INSPECTION|INTERLIS|JOIN|LAST|LINE|LINEATTR|LINESIZE|LIST|LNBASE|LOCAL|MANDATORY|METAOBJECT|MODEL|MTEXT|MULTIAREA|MULTICOORD|MULTIPOLYLINE|MULTISURFACE|NAME|NO|NOINCREMENTALTRANSFER|NOT|NULL|NUMERIC|OBJECT|OBJECTS|OF|OID|ON|OPTIONAL|OR|ORDERED|OTHERS|OVERLAPS|PARAMETER|PARENT|PERIPHERY|PI|POLYLINE|PROJECTION|RADIANS|REFERENCE|REFSYS|REFSYSTEM|REQUIRED|RESTRICTION|ROTATION|SET|SIGN|STRAIGHTS|STRUCTURE|SUBDIVISION|SURFACE|SYMBOLOGY|TABLE|TEXT|THATAREA|THIS|THISAREA|TID|TIDSIZE|TIMEOFDAY|TO|TOPIC|TRANSFER|TRANSIENT|TRANSLATION|TYPE|UNDEFINED|UNION|UNIQUE|UNIT|UNQUALIFIED|URI|VALIGNMENT|VERSION|VERTEX|VERTEXINFO|VIEW|WHEN|WHERE|WITH|WITHOUT|XMLNS)"
+					"name": "constant.language.ili",
+					"match": "(ABSTRACT|ACCORDING|AGGREGATES|AGGREGATION|ALL|AND|ANY|ANYCLASS|ANYSTRUCTURE|ARCS|AREA|AS|ASSOCIATION|AT|ATTRIBUTE|ATTRIBUTES|BAG|BASE|BASED|BASKET|BINARY|BLACKBOX|BLANK|BOOLEAN|BY|CARDINALITY|CHARSET|CIRCULAR|CLASS|CLOCKWISE|CODE|CONSTRAINT|CONSTRAINTS|CONTEXT|CONTINUE|CONTINUOUS|CONTOUR|CONTRACTED|COORD|COORD2|COORD3|COUNTERCLOCKWISE|DATE|DATETIME|DEFAULT|DEFERRED|DEFINED|DEGREES|DEPENDS|DERIVATIVES|DERIVED|DIM1|DIM2|DIRECTED|DOMAIN|END|ENUMTREEVAL|ENUMVAL|EQUAL|EXISTENCE|EXTENDED|EXTENDS|EXTERNAL|FINAL|FIRST|FIX|FONT|FORM|FORMAT|FREE|FROM|FUNCTION|GENERIC|GENERICS|GRADS|GRAPHIC|HALIGNMENT|HIDING|I16|I32|IDENT|IMPORTS|IN|INHERITANCE|INSPECTION|INTERLIS|JOIN|LAST|LINE|LINEATTR|LINESIZE|LIST|LNBASE|LOCAL|MANDATORY|METAOBJECT|MODEL|MTEXT|MULTIAREA|MULTICOORD|MULTIPOLYLINE|MULTISURFACE|NAME|NO|NOINCREMENTALTRANSFER|NOT|NULL|NUMERIC|OBJECT|OBJECTS|OF|OID|ON|OPTIONAL|OR|ORDERED|OTHERS|OVERLAPS|PARAMETER|PARENT|PERIPHERY|PI|POLYLINE|PROJECTION|RADIANS|REFERENCE|REFSYS|REFSYSTEM|REQUIRED|RESTRICTION|ROTATION|SET|SIGN|STRAIGHTS|STRUCTURE|SUBDIVISION|SURFACE|SYMBOLOGY|TABLE|TEXT|THATAREA|THIS|THISAREA|TID|TIDSIZE|TIMEOFDAY|TO|TOPIC|TRANSFER|TRANSIENT|TRANSLATION|TYPE|UNDEFINED|UNION|UNIQUE|UNIT|UNQUALIFIED|URI|VALIGNMENT|VERSION|VERTEX|VERTEXINFO|VIEW|WHEN|WHERE|WITH|WITHOUT|XMLNS)"
 				},
 				{
-				"name": "constant.numeric",
-				"match": "[0-9]"
+					"name": "constant.numeric",
+					"match": "[0-9]"
 				}
 			]
 		},
 		"variables": {
 			"patterns": [
 				{
-				"name": "variable.boolean.ili",
-				"match": "(BOOLEAN)"
+					"name": "variable.boolean.ili",
+					"match": "(BOOLEAN)"
 				},
 				{
-				"name": "variable.text.ili",
-				"match": "(TEXT)"
+					"name": "variable.text.ili",
+					"match": "(TEXT)"
 				},
 				{
-				"name": "variable.geom.ili",
-				"match": "(OVERLAPS)"
+					"name": "variable.geom.ili",
+					"match": "(OVERLAPS)"
 				},
 				{
-				"name": "variable.int.ili",
-				"match": "(\\?<![\\w\\d])INT(?![\\w\\d])"
+					"name": "variable.int.ili",
+					"match": "(\\?<![\\w\\d])INT(?![\\w\\d])"
 				}
 			]
 		}
