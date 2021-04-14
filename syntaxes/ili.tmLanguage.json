@@ -71,13 +71,8 @@
 			"patterns": [
 				{
 					"name": "string.quoted.single.ili",
-					"begin": "{",
-					"end": "}"
-				},
-				{
-					"name": "string.paranth.single.ili",
-					"begin": "\\(",
-					"end": "\\)"
+					"begin": "\"",
+					"end": "\""
 				}
 			]
 		},
@@ -105,7 +100,7 @@
 				},
 				{
 					"name": "constant.numeric",
-					"match": "[0-9]"
+					"match": "(\\+|-)?([1-9]\\d*\\.?|0\\.)\\d*([E|e][+|-]?[1-9]\\d*)?"
 				}
 			]
 		},
