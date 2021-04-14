@@ -46,4 +46,4 @@ temp/
 .ionide
 
 ### vsce Output ###
-.vsxi
+**/*.vsix
