@@ -3,12 +3,12 @@
     "displayName": "INTERLIS2 File Highlighter",
     "description": "A VSC extension to support INTERLIS 2",
     "icon": "images/iliIcon.PNG",
-    "publisher": "geow",
+    "publisher": "GeoWerkstatt",
     "repository": {
         "type": "git",
-        "url": "https://github.com/olivergrimm/vsc_interlis2_extension.git"
+        "url": "https://github.com/GeoWerkstatt/vsc_interlis2_extension.git"
     },
-    "version": "0.9.1",
+    "version": "0.1.0",
     "engines": {
         "vscode": "^1.35.0"
     },

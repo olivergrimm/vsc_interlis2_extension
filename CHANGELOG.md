@@ -1,8 +1,6 @@
 # Change Log
 
-### 0.9.0 - 3 Sept 2020
+### 0.1.0 - 12.04.2021
 
-* Added coloring of **string constants** enclosed with single or double quotes.
+* Added coloring of INTERLIS 2 Keywords.
 
-
-[sample]: https://raw.githubusercontent.com/emilast/vscode-logfile-highlighter/master/content/sample.png

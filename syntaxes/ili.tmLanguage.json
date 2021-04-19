@@ -21,72 +21,66 @@
 			"include": "#markups"
 		}
 	],
-		"repository": {
-			"keywords": {
-				"patterns": [
-					{
-					"name": "keyword.model.ili",
-					"match": "(\\b(MODEL))|(\\b(END))"
-					},
-					{
-					"name": "keyword.topic.ili",
-					"match": "(\\b(TOPIC))|(\\b(END))"
-					},
-					{
-					"name": "keyword.class.ili",
-					"match": "(\\b(CLASS))|(\\b(END))"
-					},					
-					{
-					"name": "keyword.association.ili",
-					"match": "(\\b(ASSOCIATION))|(\\b(END))"
-					},					
-					{
-					"name": "keyword.structure.ili",
-					"match": "(\\b(STRUCTURE))|(\\b(END))"
-					},					
-					{
-					"name": "keyword.constraint.ili",
-					"match": "(\\b(CONSTRAINT))|(\\b(END))"
-					},
-					{
-						"name": "keyword.view.ili",
-						"match": "(\\b(VIEW))|(\\b(END))"
-						},				
-					{
-					"name": "keyword.language.ili",
-					"match": "(\\b(INTERLIS 2.4;))"
-					}						
-				]
-				},
-		"comments": {
-					"patterns": [
-						{
-						"name": "comment.line.double-dash.ili",
-						"begin": "!!",
-						"end": "\n"
-		
-						}
-					]
-				},
-		"strings":{
+	"repository": {
+		"keywords": {
 			"patterns": [
 				{
-				"name":"string.quoted.single.ili",
-				"begin": "{",
-				"end": "}"
+					"name": "keyword.model.ili",
+					"match": "(\\b(MODEL))|(\\b(END))"
 				},
 				{
-					"name":"string.paranth.single.ili",
-					"begin": "\\(",
-					"end": "\\)"
+					"name": "keyword.topic.ili",
+					"match": "(\\b(TOPIC))|(\\b(END))"
+				},
+				{
+					"name": "keyword.class.ili",
+					"match": "(\\b(CLASS))|(\\b(END))"
+				},
+				{
+					"name": "keyword.association.ili",
+					"match": "(\\b(ASSOCIATION))|(\\b(END))"
+				},
+				{
+					"name": "keyword.structure.ili",
+					"match": "(\\b(STRUCTURE))|(\\b(END))"
+				},
+				{
+					"name": "keyword.constraint.ili",
+					"match": "(\\b(CONSTRAINT))|(\\b(END))"
+				},
+				{
+					"name": "keyword.view.ili",
+					"match": "(\\b(VIEW))|(\\b(END))"
+				},
+				{
+					"name": "keyword.language.ili",
+					"match": "(\\b(INTERLIS 2.4;))"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-dash.ili",
+					"begin": "!!",
+					"end": "\n"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.single.ili",
+					"begin": "\"",
+					"end": "\""
 				}
 			]
 		},
 		"markups": {
 			"patterns": [
 				{
-				"name": "constant.character.ili",
-				"match": "(;|=|:)"
+					"name": "constant.character.ili",
+					"match": "(;|=|:)"
 				},
 				{
 					"name": "constant.association.ili",
@@ -101,32 +95,32 @@
 					"match": "(--)"
 				},
 				{
-				"name": "constant.language.ili",
-				"match": "(INTERLIS|VERSION|UNQUALIFIED|MANDATORY|(LOCAL)|LIST|DIRECTED|BAG|ORDERED|EXISTENCE|ATTRIBUTE|AGGREGATES|IMPORTS|POLYLINE|MULTIPOLYLINE|WITHOUT|WITH|SET|UNION|AGGREGATION|REFSYSTEM|EQUAL|DEFINED|CONSTRAINT|CIRCULAR|FINAL|DOMAIN|OF|REQUIRED|WHERE|EXTENDS|JOIN|AND|(EXTENDED)|\\(EXTERNAL\\)|(ABSTRACT)|UNIQUE|AT|TEXT|INT|REFERENCE|TO|IN|FINAL|BASKET|OBJECTS|ROTATION|SURFACE|VERTEX|AREA|AS|CONTEXT|DEPENDS|ON)"
+					"name": "constant.language.ili",
+					"match": "(NOINCREMENTALTRANSFER|COUNTERCLOCKWISE|MULTIPOLYLINE|ANYSTRUCTURE|MULTISURFACE|AGGREGATION|ASSOCIATION|CARDINALITY|CONSTRAINTS|DERIVATIVES|ENUMTREEVAL|INHERITANCE|RESTRICTION|SUBDIVISION|TRANSLATION|UNQUALIFIED|AGGREGATES|ATTRIBUTES|CONSTRAINT|CONTINUOUS|CONTRACTED|HALIGNMENT|INSPECTION|METAOBJECT|MULTICOORD|PROJECTION|VALIGNMENT|VERTEXINFO|ACCORDING|ATTRIBUTE|CLOCKWISE|EXISTENCE|MANDATORY|MULTIAREA|PARAMETER|PERIPHERY|REFERENCE|REFSYSTEM|STRAIGHTS|STRUCTURE|SYMBOLOGY|TIMEOFDAY|TRANSIENT|UNDEFINED|ABSTRACT|ANYCLASS|BLACKBOX|CIRCULAR|CONTINUE|DATETIME|DEFERRED|DIRECTED|EXTENDED|EXTERNAL|FUNCTION|GENERICS|INTERLIS|LINEATTR|LINESIZE|OPTIONAL|OVERLAPS|POLYLINE|REQUIRED|ROTATION|THATAREA|THISAREA|TRANSFER|BOOLEAN|CHARSET|CONTEXT|CONTOUR|DEFAULT|DEFINED|DEGREES|DEPENDS|DERIVED|ENUMVAL|EXTENDS|GENERIC|GRAPHIC|IMPORTS|NUMERIC|OBJECTS|ORDERED|RADIANS|SURFACE|TIDSIZE|VERSION|WITHOUT|BASKET|BINARY|COORD2|COORD3|DOMAIN|FORMAT|HIDING|LNBASE|OBJECT|OTHERS|PARENT|REFSYS|UNIQUE|VERTEX|BASED|BLANK|CLASS|COORD|EQUAL|FINAL|FIRST|GRADS|IDENT|LOCAL|MODEL|MTEXT|TABLE|TOPIC|UNION|WHERE|XMLNS|ARCS|AREA|BASE|CODE|DATE|DIM1|DIM2|FONT|FORM|FREE|FROM|JOIN|LAST|LINE|LIST|NAME|NULL|SIGN|TEXT|THIS|TYPE|UNIT|VIEW|WHEN|WITH|ALL|AND|ANY|BAG|END|FIX|I16|I32|NOT|OID|SET|TID|URI|AS|AT|BY|IN|NO|OF|ON|OR|PI|TO)"
 				},
 				{
-				"name": "constant.numeric",
-				"match": "[0-9]"
+					"name": "constant.numeric",
+					"match": "\\b(\\+|-)?([1-9]\\d*\\.?|0\\.)\\d*([E|e][+|-]?[1-9]\\d*)?"
 				}
 			]
 		},
 		"variables": {
 			"patterns": [
 				{
-				"name": "variable.boolean.ili",
-				"match": "(BOOLEAN)"
+					"name": "variable.boolean.ili",
+					"match": "(BOOLEAN)"
 				},
 				{
-				"name": "variable.text.ili",
-				"match": "(TEXT)"
+					"name": "variable.text.ili",
+					"match": "(TEXT)"
 				},
 				{
-				"name": "variable.geom.ili",
-				"match": "(OVERLAPS)"
+					"name": "variable.geom.ili",
+					"match": "(OVERLAPS)"
 				},
 				{
-				"name": "variable.int.ili",
-				"match": "(\\?<![\\w\\d])INT(?![\\w\\d])"
+					"name": "variable.int.ili",
+					"match": "(\\?<![\\w\\d])INT(?![\\w\\d])"
 				}
 			]
 		}
