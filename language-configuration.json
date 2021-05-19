@@ -22,7 +22,7 @@
     { "open": "ASSOCIATION", "close": "END" },
     { "open": "STRUCTURE", "close": "END" },
     { "open": "GRAPHIC", "close": "END" },
-    { "open": "VIEw", "close": "END" },
+    { "open": "VIEW", "close": "END" },
     { "open": "{", "close": "}" },
     { "open": "[", "close": "]" },
     { "open": "(", "close": ")" },
