@@ -17,9 +17,11 @@ jobs:
         node-version: 14.x
     - run: npm install
     - name: Publish package 
-      run: npx vsce publish patch
+      run: npx vsce publish
       env: 
         VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
+    - name: Patch Version
+      run: npm version patch 
     - name: Push Version update
       uses: ad-m/github-push-action@057a6ba835d986bfe495dd476a6c4db1d5f9503c
       with:
