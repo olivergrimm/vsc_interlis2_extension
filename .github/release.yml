@@ -1,0 +1,27 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Install Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    - run: npm install
+    - name: Publish package 
+      run: npx vsce publish patch
+      env: 
+        VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
+    - name: Push Version update
+      uses: ad-m/github-push-action@057a6ba835d986bfe495dd476a6c4db1d5f9503c
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
