@@ -16,16 +16,28 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "INTERLIS2",
-            "aliases": ["INTERLIS2", "ili"],
-            "extensions": [".ili"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "INTERLIS2",
-            "scopeName": "source.ili",
-            "path": "./syntaxes/ili.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "INTERLIS2",
+                "aliases": [
+                    "INTERLIS2",
+                    "ili"
+                ],
+                "extensions": [
+                    ".ili"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "INTERLIS2",
+                "scopeName": "source.ili",
+                "path": "./syntaxes/ili.tmLanguage.json"
+            }
+        ]
+    },
+    "devDependencies": {
+        "vsce": "^1.88.0"
     }
 }
