@@ -1,6 +1,6 @@
 # Change Log
 
-### 0.1.1 - 21.05.2021
+### 0.1.2 - 21.05.2021
 
 * Automate deployment via GitHub
 * Fix typo in VIEW configuration
