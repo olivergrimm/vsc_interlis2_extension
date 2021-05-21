@@ -4,6 +4,7 @@
     "description": "Syntax highlighting for INTERLIS 2.4",
     "icon": "images/iliIcon.PNG",
     "publisher": "geowerkstatt",
+    "license": "MIT",
     "repository": {
         "type": "git",
         "url": "https://github.com/GeoWerkstatt/vsc_interlis2_extension.git"
@@ -15,6 +16,7 @@
     "categories": [
         "Programming Languages"
     ],
+    "keywords": ["INTERLIS", "ili"],
     "contributes": {
         "languages": [
             {
