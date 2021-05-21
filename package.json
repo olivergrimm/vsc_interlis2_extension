@@ -16,7 +16,10 @@
     "categories": [
         "Programming Languages"
     ],
-    "keywords": ["INTERLIS", "ili"],
+    "keywords": [
+        "INTERLIS",
+        "ili"
+    ],
     "contributes": {
         "languages": [
             {
