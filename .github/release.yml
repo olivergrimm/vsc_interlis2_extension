@@ -18,8 +18,8 @@ jobs:
       with:
         node-version: 14.x
     - run: npm install
-    - name: Publish package patch
-      run: npx vsce publish
+    - name: Publish package & patch version
+      run: npx vsce publish patch
       env: 
         VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
     - name: Push Version update
