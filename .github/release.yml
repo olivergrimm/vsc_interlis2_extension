@@ -17,11 +17,15 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 14.x
-    - run: npm install
+    - name: Configure git
+      run: |
+        git config --local user.email "office@geowerkstatt.ch"
+        git config --local user.name "GeoWerkstatt-Build"
+    - run: npm ci
     - name: Publish package & patch version
       run: npx vsce publish patch
       env: 
-        VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
+        VSCE_PAT: ${{ secrets.VSCE_PAT }}
     - name: Push Version update
       uses: ad-m/github-push-action@057a6ba835d986bfe495dd476a6c4db1d5f9503c
       with:
