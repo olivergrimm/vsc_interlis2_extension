@@ -4,28 +4,45 @@
     "description": "Syntax highlighting for INTERLIS 2.4",
     "icon": "images/iliIcon.PNG",
     "publisher": "geowerkstatt",
+    "license": "MIT",
     "repository": {
         "type": "git",
         "url": "https://github.com/GeoWerkstatt/vsc_interlis2_extension.git"
     },
-    "version": "0.1.1",
+    "version": "0.1.2",
     "engines": {
         "vscode": "^1.35.0"
     },
     "categories": [
         "Programming Languages"
     ],
+    "keywords": [
+        "INTERLIS",
+        "ili"
+    ],
     "contributes": {
-        "languages": [{
-            "id": "INTERLIS2",
-            "aliases": ["INTERLIS2", "ili"],
-            "extensions": [".ili"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "INTERLIS2",
-            "scopeName": "source.ili",
-            "path": "./syntaxes/ili.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "INTERLIS2",
+                "aliases": [
+                    "INTERLIS2",
+                    "ili"
+                ],
+                "extensions": [
+                    ".ili"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "INTERLIS2",
+                "scopeName": "source.ili",
+                "path": "./syntaxes/ili.tmLanguage.json"
+            }
+        ]
+    },
+    "devDependencies": {
+        "vsce": "^1.88.0"
     }
 }
