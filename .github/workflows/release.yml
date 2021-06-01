@@ -13,26 +13,35 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+
     - name: Install Node.js
       uses: actions/setup-node@v1
       with:
         node-version: 14.x
+
     - name: Configure git
       run: |
         git config --local user.email "office@geowerkstatt.ch"
         git config --local user.name "GeoWerkstatt-Build"
+
     - run: npm ci
-    - name: Tag current Version
-      run: npm version --allow-same-version (node -p "require('./package.json').version")
+
     - name: Publish extension
       run: npx vsce publish
       env: 
         VSCE_PAT: ${{ secrets.VSCE_PAT }}
+
+    - name: Tag current Version
+      run: |
+        VERSION=$(node -p "require('./package.json').version")
+        git tag v$VERSION
+
     - name: Patch version
       run: |
         npm version -no-git-tag-version patch
         git add .
         git commit -m "Patch version"
+
     - name: Push Version update
       uses: ad-m/github-push-action@057a6ba835d986bfe495dd476a6c4db1d5f9503c
       with:
