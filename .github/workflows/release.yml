@@ -36,14 +36,15 @@ jobs:
         VERSION=$(node -p "require('./package.json').version")
         git tag v$VERSION
 
-    - name: Patch version
+    - name: Prepare next version
       run: |
         npm version -no-git-tag-version patch
         git add .
         git commit -m "Patch version"
 
-    - name: Push Version update
+    - name: Push version update
       uses: ad-m/github-push-action@057a6ba835d986bfe495dd476a6c4db1d5f9503c
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}
+        tags: true
