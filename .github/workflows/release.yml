@@ -13,38 +13,46 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
 
     - name: Install Node.js
       uses: actions/setup-node@v1
       with:
         node-version: 14.x
 
-    - name: Configure git
+    - name: Get current version
       run: |
-        git config --local user.email "office@geowerkstatt.ch"
-        git config --local user.name "GeoWerkstatt-Build"
+          VERSION=$(node -p "require('./package.json').version")
+          VERSION_TAG=v$VERSION
+          echo VERSION_TAG=$VERSION_TAG >> $GITHUB_ENV
+
+    - name: Fail on existing version tag
+      id: check_tag
+      continue-on-error: true
+      run: exit $(git tag -l ${{ env.VERSION_TAG }} | wc -l) 
 
     - run: npm ci
+      if: ${{ steps.check_tag.action == 'failure' }}
 
     - name: Publish extension
       run: npx vsce publish
+      if: ${{ steps.check_tag.action == 'failure' }}
       env: 
         VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
-    - name: Tag current Version
-      run: |
-        VERSION=$(node -p "require('./package.json').version")
-        git tag v$VERSION
+    - name: Tag current version
+      if: ${{ steps.check_tag.action == 'failure' }}
+      run: | 
+          git config --local user.email "office@geowerkstatt.ch"
+          git config --local user.name "GeoWerkstatt-Build"
+          git tag ${{ env.VERSION_TAG }}         
 
-    - name: Prepare next version
-      run: |
-        npm version -no-git-tag-version patch
-        git add .
-        git commit -m "Patch version"
-
-    - name: Push version update
+    - name: Push version tag
+      if: ${{ steps.check_tag.action == 'failure' }}
       uses: ad-m/github-push-action@057a6ba835d986bfe495dd476a6c4db1d5f9503c
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}
         tags: true
+
