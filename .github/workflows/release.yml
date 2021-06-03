@@ -32,23 +32,23 @@ jobs:
       run: exit $(git tag -l ${{ env.VERSION_TAG }} | wc -l) 
 
     - run: npm ci
-      if: ${{ steps.check_tag.action == 'failure' }}
+      if: ${{ steps.check_tag.outcome == 'success' }}
 
     - name: Publish extension
       run: npx vsce publish
-      if: ${{ steps.check_tag.action == 'failure' }}
+      if: ${{ steps.check_tag.outcome == 'success' }}
       env: 
         VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
     - name: Tag current version
-      if: ${{ steps.check_tag.action == 'failure' }}
+      if: ${{ steps.check_tag.outcome == 'success' }}
       run: | 
           git config --local user.email "office@geowerkstatt.ch"
           git config --local user.name "GeoWerkstatt-Build"
           git tag ${{ env.VERSION_TAG }}         
 
     - name: Push version tag
-      if: ${{ steps.check_tag.action == 'failure' }}
+      if: ${{ steps.check_tag.outcome == 'success' }}
       uses: ad-m/github-push-action@057a6ba835d986bfe495dd476a6c4db1d5f9503c
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
