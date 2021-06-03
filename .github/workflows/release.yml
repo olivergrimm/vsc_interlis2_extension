@@ -24,8 +24,7 @@ jobs:
     - name: Get current version
       run: |
           VERSION=$(node -p "require('./package.json').version")
-          VERSION_TAG=v$VERSION
-          echo VERSION_TAG=$VERSION_TAG >> $GITHUB_ENV
+          echo VERSION_TAG=v$VERSION >> $GITHUB_ENV
 
     - name: Fail on existing version tag
       id: check_tag
@@ -55,4 +54,3 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}
         tags: true
-
