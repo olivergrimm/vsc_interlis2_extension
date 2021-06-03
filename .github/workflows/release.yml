@@ -31,7 +31,8 @@ jobs:
       continue-on-error: true
       run: exit $(git tag -l ${{ env.VERSION_TAG }} | wc -l) 
 
-    - run: npm ci
+    - name: Install packages
+      run: npm ci
       if: ${{ steps.check_tag.outcome == 'success' }}
 
     - name: Publish extension
