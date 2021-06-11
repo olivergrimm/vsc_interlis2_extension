@@ -7,7 +7,6 @@ on:
 
 jobs:
   release:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -27,7 +26,6 @@ jobs:
 
     - name: Fail on existing version tag
       id: check_tag
-      continue-on-error: true
       run: echo PERFORM_PUBLISH=$(git tag -l ${{ env.VERSION_TAG }} | wc -l) >> GITHUB_ENV
 
     - name: Install packages
