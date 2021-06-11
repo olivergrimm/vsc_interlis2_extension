@@ -26,9 +26,7 @@ jobs:
 
     - name: Fail on existing version tag
       id: check_tag
-      run: |
-          PERFORM_PUBLISH=$(git tag -l ${{ env.VERSION_TAG }} | wc -l)
-          echo PERFORM_PUBLISH=$PERFORM_PUBLISH >> GITHUB_ENV
+      run: echo PERFORM_PUBLISH=$(git tag -l ${{ env.VERSION_TAG }} | wc -l) >> $GITHUB_ENV
 
     - name: Install packages
       run: npm ci
