@@ -30,7 +30,7 @@ jobs:
       
     - name: Install packages
       run: npm ci
-      if: env.PERFORM_PUBLISH
+      if: env.PERFORM_PUBLISH == 'true'
 
     - name: Publish extension
       run: npx vsce publish
