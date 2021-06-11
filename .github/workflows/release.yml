@@ -1,10 +1,9 @@
 name: Release
 
 on:
-  pull_request:
+  push:
     branches:
-      - master
-    types: [closed]
+      - github-actions-release-test
 
 jobs:
   release:
@@ -29,27 +28,27 @@ jobs:
     - name: Fail on existing version tag
       id: check_tag
       continue-on-error: true
-      run: exit $(git tag -l ${{ env.VERSION_TAG }} | wc -l) 
+      run: echo PERFORM_PUBLISH=$(git tag -l ${{ env.VERSION_TAG }} | wc -l) >> GITHUB_ENV
 
     - name: Install packages
       run: npm ci
-      if: ${{ steps.check_tag.outcome == 'success' }}
+      if: ${{ env.PERFORM_PUBLISH == 0 }}
 
     - name: Publish extension
       run: npx vsce publish
-      if: ${{ steps.check_tag.outcome == 'success' }}
+      if: ${{ env.PERFORM_PUBLISH == 0 }}
       env: 
         VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
     - name: Tag current version
-      if: ${{ steps.check_tag.outcome == 'success' }}
+      if: ${{ env.PERFORM_PUBLISH == 0 }}
       run: | 
           git config --local user.email "office@geowerkstatt.ch"
           git config --local user.name "GeoWerkstatt-Build"
           git tag ${{ env.VERSION_TAG }}         
 
     - name: Push version tag
-      if: ${{ steps.check_tag.outcome == 'success' }}
+      if: ${{ env.PERFORM_PUBLISH == 0 }}
       uses: ad-m/github-push-action@057a6ba835d986bfe495dd476a6c4db1d5f9503c
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
