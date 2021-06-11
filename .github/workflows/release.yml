@@ -30,11 +30,11 @@ jobs:
       
     - name: Install packages
       run: npm ci
-      if: env.PERFORM_PUBLISH
+      if: ${{ env.PERFORM_PUBLISH }}
 
     - name: Publish extension
       run: npx vsce publish
-      if: env.PERFORM_PUBLISH
+      if: ${{ env.PERFORM_PUBLISH == 'true' }}
       env: 
         VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
