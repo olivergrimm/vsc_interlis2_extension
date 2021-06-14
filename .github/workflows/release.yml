@@ -31,12 +31,12 @@ jobs:
       run: echo PERFORM_PUBLISH=$(git rev-parse --verify -q "refs/tags/${{ env.VERSION_TAG }}" >> /dev/null && echo false || echo true) >> $GITHUB_ENV
       
     - name: Install packages
-      run: npm ci
       if: ${{ env.PERFORM_PUBLISH == 'true' }}
+      run: npm ci
       
     - name: Publish extension
-      run: npx vsce publish
       if: ${{ env.PERFORM_PUBLISH == 'true' }}
+      run: npx vsce publish
       env: 
         VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
