@@ -12,5 +12,14 @@
             "END ${1}."
         ],
         "description": "A MODEL block"
+    },
+    "TopicDef" : {
+        "prefix": ["TOPIC", "Topic", "topic"],
+        "body": [
+            "TOPIC ${1:Topic-Name} ${2:${3|ABSTRACT,FINAL|}} = ",
+            "\t${0}",
+            "END ${1}."
+        ],
+        "description": "A TOPIC block"
     }
 }
