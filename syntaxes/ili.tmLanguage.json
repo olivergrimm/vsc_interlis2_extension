@@ -51,10 +51,6 @@
 				{
 					"name": "keyword.view.ili",
 					"match": "(\\b(VIEW))|(\\b(END))"
-				},
-				{
-					"name": "keyword.language.ili",
-					"match": "(\\b(INTERLIS 2.4;))"
 				}
 			]
 		},
