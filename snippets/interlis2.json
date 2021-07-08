@@ -7,7 +7,7 @@
     "ModelDef" : {
         "prefix": ["MODEL", "Model", "model"],
         "body": [
-            "MODEL ${1:Model-Name} ${2:${3|(en),(de),(fr),(it),(rm)|} }AT \"${4:URL}\" VERSION \"${5:$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE}\" = ",
+            "MODEL ${1:Model-Name} ${2:${3|(en),(de),(fr),(it),(rm)|} }AT \"${4:URL}\" VERSION \"${5:${CURRENT_YEAR}_${CURRENT_MONTH}_${CURRENT_DATE}}\" = ",
             "\t${0}",
             "END ${1}."
         ],
