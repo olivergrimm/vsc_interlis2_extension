@@ -40,6 +40,12 @@
                 "scopeName": "source.ili",
                 "path": "./syntaxes/ili.tmLanguage.json"
             }
+        ],
+        "snippets": [
+            {
+                "language": "INTERLIS2",
+                "path": "./snippets/interlis2.json"
+            }
         ]
     },
     "devDependencies": {
